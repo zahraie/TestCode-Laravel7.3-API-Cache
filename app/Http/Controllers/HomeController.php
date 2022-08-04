@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Repository\City;
+// use App\City;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -23,7 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $cities = City::orderBy('ID')->get();
+        // var_dump($cities);
+
+        City::all('ID');
+        return view('welcome');
     }
 
     public function rel($id = 1)
